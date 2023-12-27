@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_product_sections",
+  "info": {
+    "displayName": "product-section",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title_ru": {
+      "type": "string"
+    },
+    "description_uz": {
+      "type": "string"
+    },
+    "productsSection_advantages": {
+      "type": "json"
+    },
+    "title_uz": {
+      "type": "string"
+    },
+    "description_ru": {
+      "type": "string"
+    }
+  }
+}

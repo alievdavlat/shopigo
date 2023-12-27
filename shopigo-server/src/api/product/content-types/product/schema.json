@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Products",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mainTitle_uz": {
+      "type": "text"
+    },
+    "product_advantages": {
+      "type": "json"
+    },
+    "isDiscount": {
+      "type": "boolean",
+      "default": false
+    },
+    "discount": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "productSection": {
+      "displayName": "product-section",
+      "type": "component",
+      "repeatable": true,
+      "component": "section.product-section"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "product"
+    },
+    "mainTitle_ru": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "discoun_deadline": {
+      "type": "date",
+      "default": "1823-01-01"
+    }
+  }
+}
