@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, p {
 
 html {
 	scroll-behavior: smooth;
-  // overflow-x: hidden;
+  overflow-x: hidden;
 
 }
 
@@ -1036,7 +1036,9 @@ margin-bottom: 4rem;
 	}
 
 	&-form {
-		input {
+		
+
+		input	{
 			width: 100%;
 			margin-bottom: 1.5rem;
 			padding: 1.1rem 1.5rem;
@@ -1045,7 +1047,6 @@ margin-bottom: 4rem;
 			outline: none;
 			border: .15rem solid transparent;
 			font-size: 1rem;
-
 			&:focus {
 				border-color: $yellow;
 			}

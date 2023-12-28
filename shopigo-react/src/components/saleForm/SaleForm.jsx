@@ -5,7 +5,8 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
-
+import { phoneEditor } from '../../hooks/usePhoneFormater'
+import { Input } from 'antd';
 
 const SaleForm = ({price, image, discount, isDiscount, deadline, title, setLoading, loading, type}) => {
   const { lang } = useSelector(state => state.locale)
@@ -43,12 +44,14 @@ const SaleForm = ({price, image, discount, isDiscount, deadline, title, setLoadi
 		e.preventDefault();
 
 		try {
-			setLoading(true)
+		setLoading(true)
+		const phoneNumberEdit = phone_number.replace(/[^\d]/g, "");
+		console.log(phoneNumberEdit);
 		const response = await axios.post('http://localhost:1337/api/orders', 
 		{
 			data:{
 			username,
-			phone_number,
+			phone_number:'+998' + phoneNumberEdit,
 			product_name:title
 			}
 			}
@@ -88,8 +91,6 @@ const SaleForm = ({price, image, discount, isDiscount, deadline, title, setLoadi
 
 
 
- 
-console.log(username. phone_number);
 
   return (
 	<section class="buy" id="buy">
@@ -141,8 +142,7 @@ console.log(username. phone_number);
 						required 
 						placeholder="Введите номер" 
 						value={phone_number}
-						onChange={(e) => setPhoneNumber(e.target.value)} 
-						pattern='/^9989[012345789][0-9]{7}$/'
+						onChange={(e) => setPhoneNumber(phoneEditor(e.target.value))}
 						
 						/>
 						<div class="buy-form__wrap">
